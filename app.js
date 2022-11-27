@@ -4,12 +4,12 @@ const app     = new express();
 
 // Database
 const mongoose = require('mongoose');
-// let uri        = '';
-// let options    = {user: '', pass: '', autoIndex: true};
-// mongoose.connect(uri, options, (error) => {
-//     console.log('Connection Success');
-//     console.log(error);
-// });
+let uri        = 'mongodb+srv://<username>:<password>@cluster0.wb4xo7w.mongodb.net/CRUD?retryWrites=true&w=majority';
+let options    = {user: 'imrancse019', pass: 'DhBrSDfk7jmSpAZl', autoIndex: true};
+mongoose.connect(uri, options, (error) => {
+    console.log('Connection Success');
+    console.log(error);
+});
 
 // Security Middleware
 const helmet        = require('helmet');

@@ -1,22 +1,23 @@
-import React, {Component, Fragment} from 'react';
-import { BrowserRouter as Router, Route ,Link, Routes} from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Route , Routes} from "react-router-dom";
+import ReadPage from "./Pages/ReadPage";
+import CreatePage from "./Pages/CreatePage";
+import UpdatePage from "./Pages/UpdatePage";
+import ErrorPage from "./Pages/ErrorPage";
 
-// import {BrowserRouter, Routes} from "react-router-dom";
-// import {Route} from "react-router";
-import HomePage from "./Pages/HomePage";
-
-class App extends Component {
-    render() {
-        return (
-            <Fragment>
-                <Router>
-                    <Routes>
-                        <Route exact path="/" element={<HomePage/>} />
-                    </Routes>
-                </Router>
-            </Fragment>
-        );
-    }
+function App() {
+    return (
+        <div className="App">
+            <Router>
+                <Routes>
+                    <Route path="/" element={<ReadPage/>} />
+                    <Route path="/Create" element={<CreatePage/>} />
+                    <Route path="/Update/:id" element={<UpdatePage/>} />
+                    <Route path="*" element={<ErrorPage/>} />
+                </Routes>
+            </Router>
+        </div>
+    );
 }
 
 export default App;
